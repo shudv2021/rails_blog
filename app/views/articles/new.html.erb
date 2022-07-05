@@ -1,7 +1,7 @@
 <h1> New Article Controler </h1>
-<%= form_with do |f|%>
+<%= form_with model: @article , url: articles_path do |f|%>
 <p>Form</p>
-<%= f.text_field :field, placeholder: "placeholder", id: 'id' %> <br>
-<%= f.text_field :field, placeholder: "placeholder", id: 'id1' %>
+<%= f.text_field :title, placeholder: "title", id: 'title' %> <br>
+<%= f.text_area :article_text, placeholder: "article_text", id: 'a_text' %><br>
 <%= f.submit value: 'submit'%>
-<%end%>
+<%end%> 
