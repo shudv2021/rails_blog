@@ -4,8 +4,7 @@ class ArticlesController < ApplicationController
   end
   
   def create
-  
-  binding.pry
-  
+    @title = params[:title]
+    render plain: "OK"
   end
 end
