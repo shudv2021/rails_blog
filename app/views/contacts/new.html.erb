@@ -1,6 +1,6 @@
 <h1> Send you message</h1>
 
-<%=form_with url: home_get_message_path,  data: { 'turbo': 'false' } do |f|%>
+<%=form_with url: contacts_path,  data: { 'turbo': 'false' } do |f|%>
   <div> 
     <%= f.email_field :address, placeholder: 'Input your e-mail' %>
   </div>
