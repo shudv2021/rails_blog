@@ -3,9 +3,12 @@ class ContactsController < ApplicationController
   end
   
   def create
-    @params = "#{params[:message]} --- #{params[:address]}"
-    
+  c = Contact.new(email: params[:address], message: params[:message])
+    if c.save
+    render plain: 'Messege send'
+    else
+    render :new
+    end
   end
-
 
 end
