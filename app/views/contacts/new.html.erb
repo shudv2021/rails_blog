@@ -1,4 +1,11 @@
 <h1> Send you message</h1>
+<% if !@e.nil?%>
+  <ul>
+  <%@e.each do |error|%>
+    <li><%=error%> </li>
+  <%end%>
+  </ul>
+<%end%>
 
 <%=form_with model: @contact, url: contacts_path,  data: { 'turbo': 'false' } do |f|%>
   <div>
