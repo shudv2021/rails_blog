@@ -1,14 +1,16 @@
 class ContactsController < ApplicationController
   def new
     @contact = Contact.new
+    render :new
   end
   
   def create
   c = Contact.new(contact_params)
-    if c.save
+    if c.valid?
+    c.save
     render plain: 'Messege send'
     else
-    render :new
+      new
     end
   end
 
