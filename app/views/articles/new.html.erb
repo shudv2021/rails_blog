@@ -1,15 +1,19 @@
 <h1> New Article Controler </h1>
 
-<%= form_with url: '/articles', data: { 'turbo': 'false' } do |f|%>
+<% unless @e.nil?%>
+<p> <%=@e%>
+<%end%>
+
+<%= form_with model: @article, url: '/articles', data: { 'turbo': 'false' } do |f|%>
   <div>
   <%= f.text_field :title, placeholder: "title", id: 'a_title' %> <br>
   </div>
   
   <div style="padding:10px 0px 10px 0px">  
-  <%= f.text_area :article_text, size: "75x5", placeholder: "article_text", id: 'a_text' %><br>
+  <%= f.text_area :text, size: "75x5", placeholder: "article_text", id: 'a_text' %><br>
   </div>
   
   <div>
-  <%= f.submit value: 'submit'%>
+  <%= f.submit%>
   </div>
 <%end%> 
