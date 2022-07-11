@@ -2,7 +2,12 @@
 
 <ul>
   <% @articles.each do |article|%>
-    <li> <%= article.title%> 
+    <li>
+    <div> <%= article.title%> </div> 
+    <div> <%=link_to "Edit", edit_article_path(article) %>
+
+    <%=link_to 'Delete', article_path(article), data: { "turbo-method": :delete }%>
+    </div>
     </li>
   <%end%>
 </ul>

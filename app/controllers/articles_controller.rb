@@ -5,6 +5,10 @@ class ArticlesController < ApplicationController
     @articles = Article.all
   end
   
+  def show
+    @article = Article.find(params[:id])
+  end
+  
   def new
     @article = Article.new
   end
@@ -21,8 +25,17 @@ class ArticlesController < ApplicationController
     end
   end
   
-  def show
-    @article = Article.find(params[:id])
+  def edit
+    
+  end
+  
+  def update
+  end
+  
+  def destroy
+    Article.find(params[:id]).delete
+    @articles = Article.all
+    render :index
   end
   
   private
