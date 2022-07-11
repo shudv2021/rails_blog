@@ -16,8 +16,7 @@ class ArticlesController < ApplicationController
   def create
         
     @article = Article.new(article_params)
-    if @article.valid?
-      @article.save
+    if @article.save
       redirect_to @article
     else
       @e = @article.errors.full_messages
@@ -26,10 +25,22 @@ class ArticlesController < ApplicationController
   end
   
   def edit
+    binding.pry 
+    @article = Article.find(params[:id]) if @article.nil?
+    
+    binding.pry
     
   end
   
   def update
+    @article = Article.find(params[:id])
+    @article.update(article_params)
+    if @article.save
+      redirect_to @article
+    else
+      @e = @article.errors.full_messages
+      render :edit
+    end
   end
   
   def destroy
