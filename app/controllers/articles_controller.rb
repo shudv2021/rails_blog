@@ -25,11 +25,7 @@ class ArticlesController < ApplicationController
   end
   
   def edit
-    binding.pry 
-    @article = Article.find(params[:id]) if @article.nil?
-    
-    binding.pry
-    
+    @article = Article.find(params[:id])
   end
   
   def update
@@ -37,9 +33,9 @@ class ArticlesController < ApplicationController
     @article.update(article_params)
     if @article.save
       redirect_to @article
-    else
-      @e = @article.errors.full_messages
+    else 
       render :edit
+
     end
   end
   

@@ -1,4 +1,6 @@
 <h1> Edit article </h1>
+
+<%@e = @article.errors.full_messages%>
 <% unless @e.nil?%>
   <ul>
     <%@e.each do |error|%>
@@ -20,3 +22,4 @@
   <%= f.submit%>
   </div>
 <%end%> 
+<%binding.pry%>
