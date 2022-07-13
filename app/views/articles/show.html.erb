@@ -5,8 +5,10 @@
 <ol>
 <%@article.comments.each do |comment|%>
 <li>
+<div class = 'comments'>
 <p> Person <%=comment.author%> </p>
 <p> Write: <%=comment.body %> </p>
+<div>
 </li>
 <%end%>
 </ol>
