@@ -18,13 +18,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_12_134020) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "coments", force: :cascade do |t|
+  create_table "comments", force: :cascade do |t|
     t.string "author"
     t.text "body"
-    t.integer "Article_id", null: false
+    t.integer "article_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["Article_id"], name: "index_coments_on_Article_id"
+    t.index ["article_id"], name: "index_comments_on_article_id"
   end
 
   create_table "contacts", force: :cascade do |t|
@@ -34,5 +34,5 @@ ActiveRecord::Schema[7.0].define(version: 2022_07_12_134020) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "coments", "Articles"
+  add_foreign_key "comments", "articles"
 end
