@@ -1,10 +1,15 @@
 <h1> Current article</h1>
 <p><%=@article.title%> </p>
 <p><%=@article.text%> </p>
-
+<%n = 0%>
+<ol>
 <%@article.comments.each do |comment|%>
-<p> <%= comment.body%><p>
+<li>
+<p> Person <%=comment.author%> </p>
+<p> Write: <%=comment.body %> </p>
+</li>
 <%end%>
+</ol>
 
 <%=form_with model: [@article, @article.comments.build] do |f|%>
   <div>
